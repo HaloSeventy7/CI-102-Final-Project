@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//this is a test change
+
 public class PlayerController : MonoBehaviour {
 
     [SerializeField] float moveSpeed;
