@@ -6,9 +6,11 @@ public class PlayerController : MonoBehaviour {
 
     [SerializeField] float moveSpeed;
 
-	// Use this for initialization
-	void Start () {
-		
+    private Animator animator;
+
+    // Use this for initialization
+    void Start () {
+        animator = GetComponent<Animator>();
 	}
 
     // Update is called once per frame
@@ -23,5 +25,11 @@ public class PlayerController : MonoBehaviour {
         {
             transform.Translate(new Vector3(0f, Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime, 0f));
         }
+
+        animator.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
+        animator.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
+        //In order to not make the animations take time to activate (i.e. the player starts moving, but is still in the idle animation for a little while),
+        //click on the transition, uncheck "Has Exit Time," uncheck "Fixed Duration," and set "Transition Duration" to 0. Supposedly, "Transition Duration
+        //is what causes this the most.
     }
 }
