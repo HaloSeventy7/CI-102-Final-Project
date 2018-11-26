@@ -45,12 +45,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Ground
+  - name: Lower
     uniqueID: 3131993583
     locked: 0
-  - name: Player
+  - name: Ground
     uniqueID: 1861650685
     locked: 0
-  - name: WorldObjects
+  - name: Collidable
     uniqueID: 3393972251
+    locked: 0
+  - name: Player
+    uniqueID: 2523474165
+    locked: 0
+  - name: WorldObjects
+    uniqueID: 4013648189
     locked: 0
