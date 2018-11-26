@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/First.unity
+- path: Assets/Scenes/Inside_House.unity
   isLoaded: 1
   isActive: 1
