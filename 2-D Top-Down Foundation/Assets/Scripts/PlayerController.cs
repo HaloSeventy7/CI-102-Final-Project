@@ -9,13 +9,25 @@ public class PlayerController : MonoBehaviour {
     private Animator animator;
     private Rigidbody2D myRigidbody;
 
-    private Vector2 lastMove; //Use Vector 2 for (x,y); not Vector 3 b/c it's (x,y,z)
+    public Vector2 lastMove; //Use Vector 2 for (x,y); not Vector 3 b/c it's (x,y,z)
     private bool playerMoving;
+
+    private static bool playerExists; //sets the player to true and keeps it true when entering back into the starting scene (this avoids duplicates)
 
     // Use this for initialization
     void Start () {
         animator = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
+
+        if (!playerExists)
+        {
+            playerExists = true;
+            DontDestroyOnLoad(transform.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 	}
 
     // Update is called once per frame

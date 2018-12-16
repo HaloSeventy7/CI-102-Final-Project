@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class LoadNewScene : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] string levelToLoad = "Inside_House";
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if(collision.gameObject.name == "Player")
+        {
+            Application.LoadLevel(levelToLoad);
+        }
     }
 }
